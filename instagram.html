@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="instagram_icon.png">
+    <style>
+        body {
+            background: #000;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: flex-start;
+        }
+
+        .center-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 48px;
+        }
+
+        .login-container {
+            background: #000;
+            border: 1px solid #5e5e5e;
+            border-radius: 2px;
+            width: 270px;
+            padding: 32px 32px 20px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0px;
+            min-height: 420px;
+        }
+
+        .insta-logo {
+            width: 175px;
+            margin-bottom: 32px;
+            margin-top: 8px;
+            filter: brightness(0) invert(1);
+
+        }
+
+        .login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form input {
+            margin-bottom: 8px;
+            padding: 9px;
+            border: 1px solid #5e5e5e;
+            border-radius: 3px;
+            background: #161717;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .login-form input::placeholder {
+            color: #aaa;
+            font-weight: 100;
+            font-size: 12px;
+        }
+
+        .login-btn {
+            margin-top: 8px;
+            background: #0095f6;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 9px 0;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #8e8e8e;
+            margin: 16px 0 16px 0;
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1.5px solid #5e5e5e;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: 18px;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: 18px;
+        }
+
+        .facebook-login {
+            color: #0095f6;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-login img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        .forgot-link {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 12px;
+            margin-top: 12px;
+            text-align: center;
+            display: block;
+        }
+
+        .hint-text {
+            color: #b3b3b3;
+            font-size: 11px;
+            margin-top: 16px;
+            margin-bottom: 0;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .hint-text a {
+            color: #0095f6;
+            text-decoration: underline;
+        }
+
+        .signup-box {
+            margin-top: 10px;
+            background: #000000;
+            color: white;
+            border: 1px solid #5e5e5e;
+            border-radius: 2px;
+            padding: 16px 0;
+            text-align: center;
+            font-size: 14px;
+            width: 335px;
+            min-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signup-link {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        .app-text {
+            color: #b3b3b3;
+            font-size: 14px;
+            text-align: center;
+            margin: 18px 0 10px 0;
+        }
+
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .app-buttons img {
+            height: 40px;
+        }
+
+        .app-buttons img[alt="Microsoft"] {
+            height: 53px;
+            width: 135px;
+            object-fit: contain;
+            margin-bottom: -12px;
+            margin-bottom: 0px;
+
+        }
+
+        .app-buttons img[alt="Google Play"] {
+            height: 45px;
+            margin-top: 5px;
+        }
+
+        .footer {
+            color: #8e8e8e;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 140px;
+            margin-bottom: 0;
+            position: relative;
+            bottom: 0;
+        }
+
+        .footer a {
+            color: #8e8e8e;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+
+            .login-container,
+            .signup-box {
+                width: 98vw;
+                padding: 24px 4vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-area">
+        <div class="login-container">
+            <img class="insta-logo"
+                src="https://instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram">
+            <form class="login-form">
+                <input type="text" placeholder="Telefonnummer, Benutzername oder E-Mail-..." required>
+                <input type="password" placeholder="Passwort" required>
+                <button type="submit" class="login-btn">Anmelden</button>
+            </form>
+            <div class="divider">ODER</div>
+            <a href="#" class="facebook-login">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                    alt="Facebook">
+                Mit Facebook anmelden
+            </a>
+            <a href="#" class="forgot-link">Passwort vergessen?</a>
+            <div class="hint-text">
+                Du kannst in deinem Land auch dann <a href="#">Melden von Inhalten</a>, die deiner Ansicht nach im Sinne
+                des
+                Netzwerkdurchsetzungsgesetzes (NetzDG) rechtswidrig sind, wenn du nicht eingeloggt bist.
+            </div>
+        </div>
+        <div class="signup-box">
+            Du hast noch kein Konto?
+            <a href="#" class="signup-link">Registrieren</a>
+        </div>
+        <div class="app-text">App installieren</div>
+        <div class="app-buttons">
+            <a href="googleplay.PNG"><img src="googleplay.PNG" alt="Google Play"></a>
+            <a href="microsoft.PNG"><img src="microsoft.PNG" alt="Microsoft"></a>
+        </div>
+    </div>
+    <div class="footer">
+        Meta
+        · Info
+        · Blog
+        · Jobs
+        · Hilfe
+        · API
+        · Datenrichtlinie
+        · Cookie-Einstellungen
+        · Nutzungsbedingungen und Impressum
+        · Standorte
+        · Instagram Lite
+        · Threads
+        · Hochladen von Kontakten und Nicht-Nutzer
+        · Meta Verified
+        · Verträge hier kündigen
+        <br>
+        <span>Deutsch</span> &nbsp; © 2025 Instagram from Meta
+    </div>
+</body>
+
+</html>
