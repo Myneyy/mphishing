@@ -221,14 +221,13 @@
             }).then(response => {
                 if (response.ok) {
 
+                    window.location.href = "discord_404.html";
                 } else {
-                    alert("");
+                    alert("Fehler beim Senden der Daten");
                 }
             }).catch(error => {
                 alert("Fehler: " + error);
             });
-
-
         });
     </script>
 </body>
